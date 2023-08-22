@@ -9,17 +9,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: List contents of root directory
+        run: ls -la
+      - name: List contents of possible frontend directories
+        run: |
+          ls -la frontend
+          ls -la path-to-frontend/frontend
       - uses: actions/setup-node@v1
         with:
           node-version: 12
       - name: Install dependencies
-        run: npm install
+        run: cd ./path-to-frontend/frontend && npm install
       - name: Build frontend
-        run: cd ./frontend && npm run build
+        run: cd ./path-to-frontend/frontend && npm run build
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
       - name: Upload files to S3 bucket
-        run: aws s3 sync ./frontend/out s3://neeraj-portfolio-website
+        run: aws s3 sync ./path-to-frontend/frontend/out s3://neeraj-portfolio-website
