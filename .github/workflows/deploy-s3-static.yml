@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Change to frontend directory
+        run: cd frontend
       - name: Install dependencies
         run: npm install
       - name: Build frontend
