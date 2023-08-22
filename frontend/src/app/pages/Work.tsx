@@ -1,9 +1,25 @@
 'use client'
 import React, { useState } from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import './glow.css'
 
-const WorkExperience = ({ companyLogo, jobTitle, location, startDate, endDate, details, technologies }) => {
+interface WorkExperienceProps {
+    companyLogo: string;
+    jobTitle: string;
+    location: string;
+    startDate: string;
+    endDate: string;
+    details: string[];
+    technologies: Technology[];
+}
+
+interface Technology {
+    icon: string;
+    width: number;
+    alt: string;
+}
+
+const WorkExperience: React.FC<WorkExperienceProps> = ({ companyLogo, jobTitle, location, startDate, endDate, details, technologies }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleAccordion = () => {
@@ -13,7 +29,7 @@ const WorkExperience = ({ companyLogo, jobTitle, location, startDate, endDate, d
     return (
         <div className="border-l-2 border-black-500 pl-4 mb-8 transition-colors duration-300 ease-in-out hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-sky-600 ml-50">
             <div className="cursor-pointer flex items-center" onClick={toggleAccordion}>
-                <Image src={companyLogo} width={100} height={100} alt={`${jobTitle} logo`} />
+                <img src={companyLogo} width={100} height={100} alt={`${jobTitle} logo`} />
                 <div className="ml-2">
                     <h2 className="text-2xl font-semibold mb-1 glow">{jobTitle}</h2>
                     <p className="text-white-600">{`${location}`}</p>
@@ -32,7 +48,7 @@ const WorkExperience = ({ companyLogo, jobTitle, location, startDate, endDate, d
                         <ol className="flex flex-row items-center mt-4 space-x-3">
                             {technologies.map((technology, index) => (
                                 <li key={index}>
-                                    <Image src={technology.icon} width={technology.width} height={1} alt={technology.alt} />
+                                    <img src={technology.icon} width={technology.width} height={1} alt={technology.alt} />
                                 </li>
                             ))}
                         </ol>
@@ -118,7 +134,7 @@ const WorkPage: React.FC = () => {
                 <div className="mt-12">
                     <h2 className="text-2xl font-semibold mb-4">Why Hire Me</h2>
                     <p className="text-white-700 max-w-[40vw]">
-                        Experienced Full Stack Developer skilled in crafting user-centric web applications. With three years in accessibility and usability consulting across sectors, I'm passionate about innovation, tackling challenges, and delivering exceptional user experiences. My journey into development arises from a desire to understand diverse tech stacks for expert consulting.
+                        Experienced Full Stack Developer skilled in crafting user-centric web applications. With three years in accessibility and usability consulting across sectors, I&apos;m passionate about innovation, tackling challenges, and delivering exceptional user experiences. My journey into development arises from a desire to understand diverse tech stacks for expert consulting.
                     </p>
                 </div>
                 <h1 className="text-4xl font-bold mb-8 pt-20">Work Experience

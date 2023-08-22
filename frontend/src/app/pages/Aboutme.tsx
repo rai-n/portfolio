@@ -1,12 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import './glow.css';
-import Image from 'next/image';
+// import Image from 'next/image';
 
 const AboutMePage: React.FC = () => {
     return (
         <div className="flex">
             <div id="about" className="bg-[#2E3E51] min-h-screen p-8 pt-40 w-5/6">
-                <h2 className="text-5xl font-bold mb-2 text-center text-white pt-20">Hi, I'm Neer!</h2>
+                <h2 className="text-5xl font-bold mb-2 text-center text-white pt-20">Hi, I&apos;m Neeraj!</h2>
                 <p className="text-center text-white text-sm mt-2">
                     BSc Computer Science - 1st Class | IAAP CPACC | AWS CCP
                 </p>
@@ -17,9 +18,9 @@ const AboutMePage: React.FC = () => {
                 </p>
 
                 <div className="flex flex-col items-center justify-center mt-24">
-                    <Image src="/icons/city.png" width={200} height={200} alt="City University London logo" className='bg-white' />
+                    <img src="/icons/city.png" width={200} height={200} alt="City University London logo" className='bg-white' />
                     <p className="text-white text-sm mt-2 text-center">
-                        Awarded <span className="font-bold text-blue-400">"Best Professional Pathway Student 2022"</span><br /> City University
+                        Awarded <span className="font-bold text-blue-400">&quot;Best Professional Pathway Student 2022&quot;</span><br /> City University
                     </p>
                 </div>
 

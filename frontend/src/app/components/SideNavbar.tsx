@@ -8,16 +8,17 @@ const SideNav: React.FC = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY < 100) {
+            let y = window.scrollY
+            if (y < 100 && y < 600) {
                 setCurrentPage('Home')
             }
-            if (window.scrollY > 600) {
+            if (y > 600 && y < 1500) {
                 // work page
                 setCurrentPage('Work')
             }
-            if (window.scrollY > 600 && window.screenY > 1000) {
+            if (y > 1500 && y < 2000) {
                 // work page
-                setCurrentPage('Projects')
+                setCurrentPage('Project')
             }
         };
 
