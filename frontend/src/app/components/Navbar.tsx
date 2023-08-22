@@ -155,7 +155,7 @@ const Navbar: React.FC = () => {
 
                 </div>
                 <div>
-                    <p className="text-white text-sm mt-2 text-center ml-10">Total downloads: 0</p>
+                    <p className="text-white text-sm mt-2 text-center ml-10"></p>
                 </div>
 
 
