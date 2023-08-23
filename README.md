@@ -43,7 +43,7 @@ Packages used:
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::www.neerrai.com"
+            "Resource": "arn:aws:s3:::neerrai.com/*"
         }
     ]
 }
@@ -59,5 +59,4 @@ Packages used:
         "AllowedHeaders": ["*"]
     }
 ]
-
 ```

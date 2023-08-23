@@ -32,14 +32,18 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({
                     {projectDescription}
                 </p>
                 <div className="w-[50vw] mt-4">
-                    <div className="flex flex-row items-center space-x-3">
-                        {tools.map(element => (
-                            <span className="bg-blue-500 text-white py-1 px-2 rounded-md text-xs font-semibold">
+                    <div className="flex flex-wrap space-x-2 space-y-2">
+                        {tools.map((element, index) => (
+                            <span
+                                key={index}
+                                className="bg-blue-500 text-white py-1 px-2 rounded-md text-xs font-semibold align-baseline"
+                            >
                                 {element}
                             </span>
                         ))}
                     </div>
                 </div>
+
                 <div className="mt-4">
                     {codeLink ? <a
                         href={codeLink}

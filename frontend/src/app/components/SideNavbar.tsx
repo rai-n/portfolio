@@ -1,10 +1,12 @@
 'use client'
 import React, { useEffect, useState } from 'react';
+import { checkPhone } from '../helpers/isPhone';
 
 const SideNav: React.FC = () => {
 
 
     const [currentPage, setCurrentPage] = useState('Home')
+    const [isPhone, setIsPhone] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,17 +24,24 @@ const SideNav: React.FC = () => {
             }
         };
 
+        const applyResize = () => {
+            setIsPhone(checkPhone)
+        }
+
+        applyResize()
+
+        window.addEventListener('resize', applyResize)
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', applyResize);
+
         };
     }, []);
 
-
-
     return (
-        <nav className="bg-transparent text-white h-screen w-64 fixed top-0 right-0 flex flex-col justify-center overflow-y-auto">
+        !isPhone && <nav className="bg-transparent text-white h-screen w-64 fixed top-0 right-0 flex flex-col justify-center overflow-y-auto">
             <div className="p-4">
                 <ul className="space-y-2">
                     <li>
@@ -52,7 +61,7 @@ const SideNav: React.FC = () => {
                     </li>
                     <li>
                         <a href="#blog" onClick={() => setCurrentPage('Blog')} className={`block py-2 px-4 rounded-md hover:bg-blue-800 transition duration-300 ${(currentPage === 'Blog') ? 'bg-gradient-to-r from-sky-600 to-transparent glow' : ''}`}>
-                            Blog
+                            Blog (Coming soon)
                         </a>
                     </li>
                 </ul>

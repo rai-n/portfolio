@@ -1,12 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import './glow.css';
+import { checkPhone } from '../helpers/isPhone';
 // import Image from 'next/image';
 
 const AboutMePage: React.FC = () => {
+
+    const [isPhone, setIsPhone] = useState(false)
+
+    useEffect(() => {
+
+        const applyResize = () => {
+            setIsPhone(checkPhone)
+        }
+
+        window.addEventListener('resize', applyResize)
+        applyResize()
+
+        return () => {
+            window.removeEventListener('scroll', applyResize);
+
+        };
+
+    }, [])
+
+    console.log('test', isPhone)
+
     return (
         <div className="flex">
-            <div id="about" className="bg-[#2E3E51] min-h-screen p-8 pt-40 w-5/6">
+            <div id="about" className={`bg-[#2E3E51] min-h-screen p-8 pt-40 w-${!isPhone ? '5/6': '6/6'}`}>
                 <h2 className="text-5xl font-bold mb-2 text-center text-white pt-20">Hi, I&apos;m Neeraj!</h2>
                 <p className="text-center text-white text-sm mt-2">
                     BSc Computer Science - 1st Class | IAAP CPACC | AWS CCP
@@ -27,7 +50,7 @@ const AboutMePage: React.FC = () => {
                 {/* ... */}
                 {/* Education, Certifications, Skills, Projects, etc. */}
             </div>
-            <div className="bg-gray-900 w-1/6 h-screen"></div> {/* Sidebar space */}
+            {!isPhone && <div className="bg-gray-900 w-1/6 h-screen"></div>} {/* Sidebar space */}
         </div>
 
 

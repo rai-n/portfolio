@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import Image from 'next/image';
 import './glow.css'
+import { checkPhone } from '../helpers/isPhone';
 
 interface WorkExperienceProps {
     companyLogo: string;
@@ -27,6 +28,24 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ companyLogo, jobTitle, 
         setIsOpen(!isOpen);
     };
 
+    const [isPhone, setIsPhone] = useState(false)
+
+    useEffect(() => {
+
+        const applyResize = () => {
+            setIsPhone(checkPhone)
+        }
+
+        window.addEventListener('resize', applyResize)
+        applyResize()
+
+        return () => {
+            window.removeEventListener('scroll', applyResize);
+
+        };
+
+    }, [])
+
     return (
         <div className="border-l-2 border-black-500 pl-4 mb-8 transition-colors duration-300 ease-in-out hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-sky-600 ml-50">
             <div className="cursor-pointer flex items-center" onClick={toggleAccordion}>
@@ -45,7 +64,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ companyLogo, jobTitle, 
                             <li key={index}>{detail}</li>
                         ))}
                     </ul>
-                    <div className="bg-cyan-700 w-[50vw]">
+                    {!isPhone && <div className="bg-cyan-700 w-[50vw]">
                         <ol className="flex flex-row items-center mt-4 space-x-3">
                             {technologies.map((technology, index) => (
                                 <li key={index}>
@@ -53,7 +72,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ companyLogo, jobTitle, 
                                 </li>
                             ))}
                         </ol>
-                    </div>
+                    </div>}
                 </div>
             )}
         </div>
@@ -129,12 +148,30 @@ const WorkPage: React.FC = () => {
         },
     ];
 
+    const [isPhone, setIsPhone] = useState(false)
+
+    useEffect(() => {
+
+        const applyResize = () => {
+            setIsPhone(checkPhone)
+        }
+
+        window.addEventListener('resize', applyResize)
+        applyResize()
+
+        return () => {
+            window.removeEventListener('scroll', applyResize);
+
+        };
+
+    }, [])
+
     return (
         <div className='flex'>
-            <div id="work" className="bg-cyan-900 min-h-screen p-8 pt-20 w-5/6">
+            <div id="work" className={`bg-cyan-900 min-h-screen p-8 pt-20 w-${!isPhone ? '5/6' : '6/6'}`}>
                 <div className="mt-12">
                     <h2 className="text-2xl font-semibold mb-4">Why Hire Me</h2>
-                    <p className="text-white-700 max-w-[40vw]">
+                    <p className={`text-white-700 ${!isPhone ? 'max-w-[40vw]' : ''}`}>
                         Experienced Full Stack Developer skilled in crafting user-centric web applications. With three years in accessibility and usability consulting across sectors, I&apos;m passionate about innovation, tackling challenges, and delivering exceptional user experiences. My journey into development arises from a desire to understand diverse tech stacks for expert consulting.
                     </p>
                 </div>
@@ -146,7 +183,7 @@ const WorkPage: React.FC = () => {
                     <WorkExperience key={index} {...experience} />
                 ))}
             </div>
-            <div className="bg-gray-900 w-1/6 h-screen"></div> {/* Sidebar space */}
+            {!isPhone && <div className="bg-gray-900 w-1/6 h-screen"></div>} {/* Sidebar space */}
 
         </div>
     );

@@ -1,13 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
-
-import React from 'react';
+'use client'
+import React, { useEffect, useState } from 'react';
 import ProjectInfo from '../components/ProjectInfo';
+import { checkPhone } from '../helpers/isPhone';
 // import Image from 'next/image';
 
 const Projects = () => {
+
+    const [isPhone, setIsPhone] = useState(false)
+
+    useEffect(() => {
+
+        const applyResize = () => {
+            setIsPhone(checkPhone)
+        }
+
+        window.addEventListener('resize', applyResize)
+        applyResize()
+
+        return () => {
+            window.removeEventListener('scroll', applyResize);
+
+        };
+
+    }, [])
+
+
     return (
-        <div className="flex">
-            <div id="projects" className="bg-cyan-950 min-h-screen p-8 w-1/3">
+        <div className={`flex ${isPhone ? 'flex-col' : 'flex-row'}`}>
+            <div id="projects" className={`bg-cyan-950 min-h-screen p-8 w-${!isPhone ? '1/3' : '3/3'}`}>
                 <h1 className="text-4xl font-bold mb-8 pt-20">Projects</h1>
 
                 <div className="overflow-y-scroll overflow-x-hidden h-[700px]">
@@ -39,37 +60,25 @@ const Projects = () => {
                     <ProjectInfo
                         projectName="AWS Developer Associate"
                         projectDescription="GitHub repository for the AWS Developer Associate notes I took while preparing for the exam. It contains all the hands on examples."
-                        tools={['API Gateway','Lambda', 'DynamoDB', 'Others']}
+                        tools={['API Gateway', 'Lambda', 'DynamoDB', 'Others']}
                         viewDocs='https://github.com/rai-n/AWS-Developer-Associate'
                     />
-
-
                 </div>
-
                 <div>
-
                 </div>
-
-                {/* Project Card 1 */}
-
-
             </div>
-
-            <div className="bg-gray-900 w-3/4 h-screen p-5">
+            <div className={`bg-gray-900 ${!isPhone ? 'w-3/4 pl-20' : 'w-4/4'} h-screen flex items-center`}>
                 <img
-                    width={1000}
+                    width={!isPhone ? 750 : 500}
                     height={1}
                     src={'/images/Projects/innovacombined.png'}
                     alt={'test'}
-                    className='w-4/6 border-gradient-light-blue border-4 border-opacity-70 rounded-full mt-24 ml-12'
+                    className={`w-3/3} border-gradient-light-blue border-4 border-opacity-70 rounded-full center`}
                     loading="lazy"
                 />
-
-
-
             </div>
 
-            <div className="bg-gray-900 w-1/6 h-screen"></div>
+            {!isPhone && <div className="bg-gray-900 w-1/6 h-screen"></div>}
 
         </div>
     );
