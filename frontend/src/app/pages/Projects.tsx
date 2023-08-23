@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import ProjectInfo from '../components/ProjectInfo';
 import { checkPhone } from '../helpers/isPhone';
-// import Image from 'next/image';
 
 const Projects = () => {
 
@@ -20,15 +19,13 @@ const Projects = () => {
 
         return () => {
             window.removeEventListener('scroll', applyResize);
-
         };
 
     }, [])
 
-
     return (
         <div className={`flex ${isPhone ? 'flex-col' : 'flex-row'}`}>
-            <div id="projects" className={`bg-cyan-950 min-h-screen p-8 w-${!isPhone ? '1/3' : '3/3'}`}>
+            <div id="projects" className={`bg-cyan-950 min-h-screen p-8 ${isPhone ? 'w-full' : 'w-1/3'}`}>
                 <h1 className="text-4xl font-bold mb-8 pt-20">Projects</h1>
 
                 <div className="overflow-y-scroll overflow-x-hidden h-[700px]">
