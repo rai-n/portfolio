@@ -31,3 +31,33 @@ Packages used:
 - eslint
 - eslint-config-next
 - framer-motion: Animations
+
+
+### Bucket policy
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::www.neerrai.com"
+        }
+    ]
+}
+```
+
+## CORS policy
+```
+[
+    {
+        "AllowedOrigins": ["*"],
+        "AllowedMethods": ["GET"],
+        "MaxAgeSeconds": 3000,
+        "AllowedHeaders": ["*"]
+    }
+]
+
+```
