@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
 
                         // invalidates local cache in 24 hours
                         const item = {
-                            value: getDownloadCount,
+                            value: x,
                             expiry: now.setHours(now.getHours() + 24)
                         }
                         localStorage.setItem('resume_count_fetched', JSON.stringify(item));
@@ -62,6 +62,8 @@ const Navbar: React.FC = () => {
                     console.log('Error while fetching download count')
                 }
             }
+
+            getDownloadCount()
         }
     }, [])
 
@@ -146,10 +148,10 @@ const Navbar: React.FC = () => {
                     <a href="/resume/Resume.pdf" download>
                         <button onClick={handleClick} className="bg-red-500 text-white px-4 py-2 rounded-md shadow-md hover:bg-red-600 focus:outline-none">
                             Download Resume
-                            <svg className="h-5 w-5 ml-2 inline-block" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 7L12 14M12 14L15 11M12 14L9 11" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M16 17H12H8" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" />
-                                <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#1C274C" stroke-width="1.5" />
+                            <svg className="h-5 w-5 ml-2 inline-block" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7L12 14M12 14L15 11M12 14L9 11" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M16 17H12H8" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+                                <path d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z" stroke="#FFFFFF" stroke-width="1.5" />
                             </svg>
                         </button>
                     </a>
