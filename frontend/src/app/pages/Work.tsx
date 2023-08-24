@@ -45,7 +45,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ companyLogo, jobTitle, 
                             <li key={index}>{detail}</li>
                         ))}
                     </ul>
-                    <div className="bg-cyan-700 w-[50vw]">
+                    <div className="bg-cyan-900 w-[50vw]">
                         <ol className="flex flex-row items-center mt-4 space-x-3">
                             {technologies.map((technology, index) => (
                                 <li key={index}>
@@ -87,7 +87,7 @@ const WorkPage: React.FC = () => {
                 </div>
                 <h1 className="text-4xl font-bold mb-8 pt-20">Work Experience
 
-                    <span className="text-white text-base mt-2"> (Click to open)</span></h1>
+                    <span className="text-white text-2xl mt-2"> (Click to open)</span></h1>
 
                 {workExperiences.map((experience, index) => (
                     <WorkExperience key={index} {...experience} />

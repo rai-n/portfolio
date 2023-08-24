@@ -1,5 +1,5 @@
 const AWS = require('aws-sdk')
-const dynamodb = new AWS.DynamoDB();
+const dynamodb = new AWS.DynamoDB({ region: 'eu-west-2' });
 
 
 export const incrementDownloadTotal = async () => {
@@ -15,7 +15,7 @@ export const incrementDownloadTotal = async () => {
             statusCode: 200,
             body: JSON.stringify(res)
         }
-    } catch (error : any) {
+    } catch (error: any) {
         return {
             statusCode: 500,
             body: JSON.stringify(error.message),
@@ -33,7 +33,7 @@ export const getDownloadTotal = async () => {
             statusCode: 200,
             body: JSON.stringify(res)
         }
-    } catch (error : any) {
+    } catch (error: any) {
         return {
             statusCode: 500,
             body: JSON.stringify(error.message),
