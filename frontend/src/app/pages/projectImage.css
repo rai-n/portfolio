@@ -1,12 +1,12 @@
-@media (min-width: 1024px) {
+@media (min-width: 2100px) {
     .responsive-image {
       width: 800px;
     }
   }
   
-  @media (max-width: 1023px) {
+  @media (max-width: 2099px) {
     .responsive-image {
-      width: 600px;
+      width: 500px;
     }
   }
   
