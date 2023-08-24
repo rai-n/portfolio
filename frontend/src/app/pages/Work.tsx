@@ -29,7 +29,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = ({ companyLogo, jobTitle, 
     };
 
     return (
-        <div className="border-l-2 border-black-500 pl-4 mb-8 transition-colors duration-300 ease-in-out hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-sky-600 ml-50">
+        <div className="border-l-2 border-black-500 text-white pl-4 mb-8 transition-colors duration-300 ease-in-out hover:bg-gradient-to-l hover:from-transparent hover:via-transparent hover:to-sky-600 ml-50">
             <div className="cursor-pointer flex items-center" onClick={toggleAccordion}>
                 <img src={companyLogo} width={100} height={100} alt={`${jobTitle} logo`} />
                 <div className="ml-2">
@@ -80,12 +80,12 @@ const WorkPage: React.FC = () => {
         <div className='flex'>
             <div id="work" className={`bg-cyan-900 min-h-screen p-8 pt-20 lg:w-full xl:w-6/6`}>
                 <div className="mt-12">
-                    <h2 className="text-2xl font-semibold mb-4">Why Hire Me</h2>
-                    <p className={`text-white-700 ${!isPhone ? 'max-w-[40vw]' : ''}`}>
+                    <h2 className="text-2xl text-white font-semibold mb-4">Why Hire Me</h2>
+                    <p className={`text-white ${!isPhone ? 'max-w-[40vw]' : ''}`}>
                         Experienced Full Stack Developer skilled in crafting user-centric web applications. With three years in accessibility and usability consulting across sectors, I&apos;m passionate about innovation, tackling challenges, and delivering exceptional user experiences. My journey into development arises from a desire to understand diverse tech stacks for expert consulting.
                     </p>
                 </div>
-                <h1 className="text-4xl font-bold mb-8 pt-20">Work Experience
+                <h1 className="text-4xl text-white font-bold mb-8 pt-20">Work Experience
 
                     <span className="text-white text-2xl mt-2"> (Click to open)</span></h1>
 

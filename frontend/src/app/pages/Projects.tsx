@@ -26,7 +26,7 @@ const Projects = () => {
     return (
         <div className={`flex ${isPhone ? 'flex-col' : 'flex-row'}`}>
             <div id="projects" className={`bg-cyan-950 min-h-screen p-8 ${isPhone ? 'w-full' : 'w-1/3'}`}>
-                <h1 className="text-4xl font-bold mb-8 pt-20">Projects</h1>
+                <h1 className="text-4xl text-white font-bold mb-8 pt-20">Projects</h1>
 
                 <div className="overflow-y-scroll overflow-x-hidden h-[700px]">
                     {/* Your content goes here */}
@@ -66,11 +66,11 @@ const Projects = () => {
             </div>
             <div className="bg-gray-900 pt-20 w-full h-screen">
                 <img 
-                width={!isPhone ? 700 : 500} 
+                width={!isPhone ? 950 : 500} 
                 height={1} 
                 src={"/images/Projects/innovacombined.png"}
                 alt="Innova example"
-                className={"w-2/3 border-gradient-light-blue border-4 border-opacity-70 rounded-full center"}
+                className={"border-gradient-light-blue border-4 border-opacity-70 rounded-full center"}
                 loading="lazy"
                 />
             </div>
