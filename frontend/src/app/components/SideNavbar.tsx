@@ -41,7 +41,7 @@ const SideNav: React.FC = () => {
     }, []);
 
     return (
-        !isPhone && <nav className="bg-transparent text-white h-screen w-64 fixed top-0 right-0 flex flex-col justify-center overflow-y-auto">
+        !isPhone && <nav className="bg-gray-900 text-white h-screen w-64 fixed top-0 right-0 flex flex-col justify-center overflow-y-auto">
             <div className="p-4">
                 <ul className="space-y-2">
                     <li>
