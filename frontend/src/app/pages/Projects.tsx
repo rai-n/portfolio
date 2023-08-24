@@ -64,9 +64,9 @@ const Projects = () => {
                 <div>
                 </div>
             </div>
-            <div className="bg-gray-900 pt-20 w-full h-screen">
+            <div className="bg-gray-900 pt-20 w-full h-full">
                 <img 
-                width={!isPhone ? 950 : 500} 
+                width={500}
                 height={1} 
                 src={"/images/Projects/innovacombined.png"}
                 alt="Innova example"
