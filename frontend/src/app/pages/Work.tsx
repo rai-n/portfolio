@@ -78,7 +78,7 @@ const WorkPage: React.FC = () => {
     }, [])
     return (
         <div className='flex'>
-            <div id="work" className={`bg-cyan-900 min-h-screen p-8 pt-20 lg:w-5/6 xl:w-6/6`}>
+            <div id="work" className={`bg-cyan-900 min-h-screen p-8 pt-20 lg:w-full xl:w-6/6`}>
                 <div className="mt-12">
                     <h2 className="text-2xl font-semibold mb-4">Why Hire Me</h2>
                     <p className={`text-white-700 ${!isPhone ? 'max-w-[40vw]' : ''}`}>

@@ -64,7 +64,7 @@ const Projects = () => {
                 <div>
                 </div>
             </div>
-            <div className={`bg-gray-900 ${!isPhone ? 'w-3/4 pl-20' : 'w-4/4'} h-screen flex items-center`}>
+            <div className={`bg-gray-900 ${!isPhone ? 'full' : 'w-4/4'} h-screen flex items-center`}>
                 <img
                     width={!isPhone ? 700 : 500}
                     height={1}

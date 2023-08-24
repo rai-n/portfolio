@@ -8,7 +8,7 @@ import { checkPhone } from '../helpers/isPhone';
 const AboutMePage: React.FC = () => {
     return (
         <div className="flex">
-            <div id="about" className="bg-[#2E3E51] min-h-screen p-8 pt-40 lg:w-5/6 xl:w-6/6">
+            <div id="about" className="bg-[#2E3E51] min-h-screen p-8 pt-40 lg:w-full xl:w-6/6">
                 <h2 className="text-5xl font-bold mb-2 text-center text-white pt-20">Hi, I&apos;m Neeraj!</h2>
                 <p className="text-center text-white text-sm mt-2">
                     BSc Computer Science - 1st Class | IAAP CPACC | AWS CCP
