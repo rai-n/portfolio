@@ -64,8 +64,15 @@ const Projects = () => {
                 <div>
                 </div>
             </div>
-            <div class="bg-gray-900 pt-20 w-full h-screen">
-                <img width="700" height="1" src="/images/Projects/innovacombined.png" alt="Innova example" class="w-2/3 pl-18 border-gradient-light-blue border-4 border-opacity-70 rounded-full center" loading="lazy">
+            <div className="bg-gray-900 pt-20 w-full h-screen">
+                <img 
+                width={!isPhone ? 700 : 500} 
+                height={1} 
+                src={"/images/Projects/innovacombined.png"}
+                alt="Innova example"
+                className={"w-2/3 border-gradient-light-blue border-4 border-opacity-70 rounded-full center"}
+                loading="lazy"
+                />
             </div>
 
             {/* {!isPhone && <div className="bg-gray-900 w-1/6 h-screen"></div>} */}
