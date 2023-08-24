@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import ProjectInfo from '../components/ProjectInfo';
 import { checkPhone } from '../helpers/isPhone';
+import './projectImage.css'
 
 const Projects = () => {
 
@@ -64,14 +65,12 @@ const Projects = () => {
                 <div>
                 </div>
             </div>
-            <div className="bg-gray-900 pt-20 w-full h-full">
+            <div className="bg-gray-900 pt-20 w-full">
                 <img 
-                width={500}
-                height={1} 
-                src={"/images/Projects/innovacombined.png"}
-                alt="Innova example"
-                className={"border-gradient-light-blue border-4 border-opacity-70 rounded-full center"}
-                loading="lazy"
+                    src={"/images/Projects/innovacombined.png"}
+                    alt="Innova example"
+                    className={"border-gradient-light-blue border-4 border-opacity-70 rounded-full center responsive-image"}
+                    loading="lazy"
                 />
             </div>
 

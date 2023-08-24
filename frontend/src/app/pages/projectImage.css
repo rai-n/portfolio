@@ -1,0 +1,12 @@
+@media (min-width: 1024px) {
+    .responsive-image {
+      width: 800px;
+    }
+  }
+  
+  @media (max-width: 1023px) {
+    .responsive-image {
+      width: 600px;
+    }
+  }
+  
