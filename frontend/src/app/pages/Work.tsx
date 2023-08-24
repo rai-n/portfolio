@@ -93,7 +93,7 @@ const WorkPage: React.FC = () => {
                     <WorkExperience key={index} {...experience} />
                 ))}
             </div>
-            <div className="hidden lg:block bg-gray-900 w-1/6 h-screen"></div> {/* Sidebar space */}
+            {/* <div className="hidden lg:block bg-gray-900 w-1/6 h-screen"></div> Sidebar space */}
         </div>
     );
 };

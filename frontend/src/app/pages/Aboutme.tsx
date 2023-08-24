@@ -29,7 +29,7 @@ const AboutMePage: React.FC = () => {
                 {/* ... */}
                 {/* Education, Certifications, Skills, Projects, etc. */}
             </div>
-            <div className="hidden lg:block bg-gray-900 w-1/6 h-screen"></div> {/* Sidebar space */}
+            {/* <div className="hidden lg:block bg-gray-900 w-1/6 h-screen"></div> Sidebar space */}
         </div>
 
 

@@ -66,7 +66,7 @@ const Projects = () => {
             </div>
             <div className={`bg-gray-900 ${!isPhone ? 'w-3/4 pl-20' : 'w-4/4'} h-screen flex items-center`}>
                 <img
-                    width={!isPhone ? 750 : 500}
+                    width={!isPhone ? 700 : 500}
                     height={1}
                     src={'/images/Projects/innovacombined.png'}
                     alt={'test'}
@@ -75,7 +75,7 @@ const Projects = () => {
                 />
             </div>
 
-            {!isPhone && <div className="bg-gray-900 w-1/6 h-screen"></div>}
+            {/* {!isPhone && <div className="bg-gray-900 w-1/6 h-screen"></div>} */}
 
         </div>
     );
